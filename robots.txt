@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://baikiew-cafe-tham8.vercel.app/sitemap.xml
