@@ -173,11 +173,11 @@
     if (!el || !textEl) return;
 
     var now = new Date();
-    var day = now.getDay();                 // 0 = อาทิตย์
+    var day = now.getDay();                 // 0 = อาทิตย์, 5 = ศุกร์, 6 = เสาร์
     var mins = now.getHours() * 60 + now.getMinutes();
-    var weekend = (day === 0 || day === 6);
-    var open = weekend ? 8 * 60 : 7 * 60;
-    var close = weekend ? 20 * 60 : 19 * 60;
+    var lateNight = (day === 5 || day === 6);   // ศุกร์–เสาร์ ปิดดึกกว่า
+    var open = 10 * 60;
+    var close = lateNight ? 23 * 60 : 22 * 60;
 
     function fmt(m) {
       return String(Math.floor(m / 60)).padStart(2, '0') + ':' + String(m % 60).padStart(2, '0');
