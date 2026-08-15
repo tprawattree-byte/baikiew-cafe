@@ -300,6 +300,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .g2 { grid-column: span 2; }
 .g3, .g4 { grid-column: span 1; }
 .g-art { position: absolute; inset: 0; transition: transform .6s ease; }
+.g-photo { width: 100%; height: 100%; object-fit: cover; display: block; }
 .g:hover .g-art { transform: scale(1.05); }
 .g figcaption {
   position: absolute; left: 0; right: 0; bottom: 0; z-index: 2;

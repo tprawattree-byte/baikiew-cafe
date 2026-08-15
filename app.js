@@ -107,7 +107,7 @@
 
   function matches(item, q) {
     if (!q) return true;
-    var hay = (item.th + ' ' + item.en + ' ' + item.desc).toLowerCase();
+    var hay = (item.th + ' ' + item.en + ' ' + (item.desc || '')).toLowerCase();
     return hay.indexOf(q) !== -1;
   }
 
@@ -135,7 +135,7 @@
         return '<article class="menu-item">' +
           '<div><div class="item-name">' + esc(it.th) +
           '<span class="item-en">' + esc(it.en) + '</span>' + tagsHTML(it.tags) + '</div>' +
-          '<p class="item-desc">' + esc(it.desc) + '</p></div>' +
+          (it.desc ? '<p class="item-desc">' + esc(it.desc) + '</p>' : '') + '</div>' +
           priceHTML(it) +
           '</article>';
       }).join('') + '</div></section>';
